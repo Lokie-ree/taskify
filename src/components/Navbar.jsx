@@ -5,9 +5,18 @@ const Navbar = () => {
   return (
     <>
       <div className="navbar bg-base-100 p-4">
-        <div className="flex-1">
-          <Link href="#" className="btn btn-ghost text-xl">
-            My Tasks
+        <div className="flex-1 flex">
+          <Link href="#">
+            <div className="avatar">
+              <div className="w-16 rounded-xl">
+                <img
+                  src="/assets/logo_375x375.png"
+                  alt="Taskify logo"
+                  className="rounded-box"
+                />
+              </div>
+            </div>
+            Taskify
           </Link>
         </div>
         <div className="flex-none">
