@@ -1,0 +1,14 @@
+{
+  "name": "Taskify",
+  "short_name": "Taskify",
+  "description": "Taskify: Your go-to app for effortless task management and productivity. Add, edit, and complete tasks securely and with ease. Perfect for planning your day, managing projects, and achieving your goals. Simplify your life with Taskify!",
+  "start_url": "/",
+  "background-color": "#F2F2F2",
+  "theme_color": "#26ABFF, #FF26AB",
+  "icons": [
+    {
+      "src": "any",
+      "type": "image/png"
+    }
+  ]
+}
