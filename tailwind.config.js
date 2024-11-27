@@ -14,4 +14,18 @@ module.exports = {
     },
   },
   plugins: [require("daisyui")],
+  daisyui: {
+    themes: [
+      {
+        taskifyTheme: {
+          "primary": '#26abff',
+          "secondary": '#ff26ab',
+          "accent": '#26ffab',
+          "neutral": '#e5f5ff',
+          "base-100": '#f2f2f2',
+        },
+      },
+      "dark",
+    ], 
+  }
 };
