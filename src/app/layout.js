@@ -2,6 +2,7 @@ import "./globals.css";
 import { poppins } from "@/components/ui/fonts";
 import Navbar from "../components/ui/Navbar";
 import Footer from "../components/ui/Footer";
+import { AuthProvider } from "@/context/AuthContext";
 
 export const metadata = {
   metadataBase: new URL("http://localhost:3000"),
@@ -35,9 +36,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`antialiased ${poppins.className}`}>
-        <Navbar />
-        {children}
-        <Footer />
+        <AuthProvider>
+          <Navbar />
+            {children}
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   );

@@ -1,31 +1,50 @@
-import React from "react";
-import Link from "next/link";
+'use client'
+
 import ThemeController from "./ThemeController";
+import { useAuth } from "@/context/AuthContext";
+import { motion } from "framer-motion";
+import SignOut from "./SignOut";
 
 const Navbar = () => {
+  const { user } = useAuth();
+
   return (
-    <>
-      <div className="navbar p-4">
-        <div className="flex items-center">
-          <Link href="#">
-            <div className="avatar">
-              <div className="w-12 rounded-full">
-                <img
-                  src="/assets/logo_375x375.png"
-                  alt="Taskify logo"
-                  className="rounded-box"
-                />
+    <div className="navbar bg-base-100 w-full min-w-full px-6 py-4 bg-transparent">
+      <div className="navbar-start">
+        <div className="dropdown">
+          {user ? (
+            user.photoURL && (
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost btn-circle avatar"
+              >
+                <div className="w-10 rounded-full">
+                  <img
+                    src={user.photoURL}
+                    alt={`${user.displayName} profile picture`}
+                    className="w-10 h-10 rounded-full self-center"
+                  />   
+                </div>
               </div>
-            </div>
-            
-          </Link>
+            )
+          ) : (
+            <></>
+          )}
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content bg-base-200 rounded-box z-[1] mt-3 w-52 p-2 shadow space-y-2"
+            >
+              <li>{user ? <ThemeController /> : <></>}</li>
+              <li>{user ? <SignOut /> : <></>}</li>
+            </ul>
         </div>
-        <div className="flex-none">
-          <button className="btn btn-outline btn-primary">Login</button>
-          <ThemeController />
-        </div>
+        <a className="btn btn-ghost text-xl">Taskify</a>
       </div>
-    </>
+      <div className="navbar-end">
+        <ThemeController />
+      </div>
+</div>
   );
 };
 
