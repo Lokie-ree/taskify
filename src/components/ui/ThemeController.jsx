@@ -1,16 +1,15 @@
-import React from 'react'
+import React from "react";
 import { IoIosSunny, IoIosMoon } from "react-icons/io";
 
-
 const ThemeController = () => {
-  return(
+  return (
     <label className="swap swap-rotate">
       {/* this hidden checkbox controls the state */}
       <input type="checkbox" className="theme-controller" value="dark" />
-        <IoIosSunny className="swap-off h-6 w-6 sm:h-8 sm:w-8"/>
-        <IoIosMoon className="swap-on h-6 w-6 sm:h-8 sm:w-8"/>
+      <IoIosSunny className="swap-on size-7 sm:size-9 text-yellow-600" />
+      <IoIosMoon className="swap-off size-7 sm:size-9 text-purple-600" />
     </label>
-  )
-}
+  );
+};
 
-export default ThemeController
+export default ThemeController;
