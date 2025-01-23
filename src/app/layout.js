@@ -3,6 +3,7 @@ import { poppins } from "@/components/ui/fonts";
 import Navbar from "../components/ui/Navbar";
 import Footer from "../components/ui/Footer";
 import { AuthProvider } from "@/context/AuthContext";
+import { FireStoreProvider } from "@/context/FirestoreContext";
 
 export const metadata = {
   metadataBase: new URL("http://localhost:3000"),
@@ -37,12 +38,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-theme="taskifyTheme">
+    <html lang="en">
       <body className={`antialiased ${poppins.className}`}>
         <AuthProvider>
-          <Navbar />
-          {children}
-          <Footer />
+          <FireStoreProvider>
+            <Navbar />
+            {children}
+            <Footer />
+          </FireStoreProvider>
         </AuthProvider>
       </body>
     </html>

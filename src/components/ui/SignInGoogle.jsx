@@ -5,11 +5,11 @@ const signInGoogle = () => {
   const { signInWithGoogle } = useAuth();
 
   return (
-    <button className="btn" onClick={signInWithGoogle}>
-      <FaGoogle />Sign In
+    <button className="btn btn-primary" onClick={signInWithGoogle}>
+      <FaGoogle />
+      Continue with Google
     </button>
   );
 };
 
 export default signInGoogle;
-

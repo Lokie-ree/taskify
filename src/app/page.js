@@ -1,3 +1,5 @@
+"use client";
+
 import Header from "@/components/main/Header";
 import MyTasks from "@/components/main/MyTasks";
 import Divider from "@/components/ui/Divider";
