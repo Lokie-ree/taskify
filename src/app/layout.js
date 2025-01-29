@@ -4,6 +4,7 @@ import Navbar from "../components/ui/Navbar";
 import Footer from "../components/ui/Footer";
 import { AuthProvider } from "@/context/AuthContext";
 import { FireStoreProvider } from "@/context/FirestoreContext";
+import { TaskProvider } from "@/context/TaskContext";
 
 export const metadata = {
   metadataBase: new URL("http://localhost:3000"),
@@ -43,7 +44,7 @@ export default function RootLayout({ children }) {
         <AuthProvider>
           <FireStoreProvider>
             <Navbar />
-            {children}
+            <TaskProvider>{children}</TaskProvider>
             <Footer />
           </FireStoreProvider>
         </AuthProvider>
